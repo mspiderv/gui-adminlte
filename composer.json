@@ -1,0 +1,19 @@
+{
+    "name": "vitlabs/gui-adminlte",
+    "description": "",
+    "authors": [
+		{
+			"name": "Matej Vitaz",
+			"email": "mspiderv@gmail.com"
+		}
+	],
+    "require": {
+        "vitlabs/gui-core": "*",
+        "vitlabs/gui-admin": "*",
+    },
+    "autoload": {
+        "psr-4": {
+            "Vitlabs\\GUIAdminLTE\\": ""
+        }
+    }
+}

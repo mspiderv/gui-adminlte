@@ -1,0 +1,1 @@
+<{!! $tag . $attrs !!}>@if ($paired){!! $content !!}</{!! $tag !!}>@endif
