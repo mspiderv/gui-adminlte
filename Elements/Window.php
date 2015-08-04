@@ -33,6 +33,9 @@ class Window extends Element implements WindowContract
 				// AdminLTE Skins
 				'AdminLTE-2.2.0/dist/css/skins/_all-skins.min.css',
 
+                // PNofity
+                'pnotify/pnotify.custom.min.css',
+
 			    // Custom styles
 			    'custom/css/style.css',
 
@@ -55,6 +58,10 @@ class Window extends Element implements WindowContract
 				// AdminLTE App
 				'AdminLTE-2.2.0/dist/js/app.min.js',
 
+                // PNofity
+                'pnotify/pnotify.custom.min.js',
+                'pnotify/loader.js',
+
 			    // Custom
 			    'custom/js/main.js',
 
@@ -67,7 +74,7 @@ class Window extends Element implements WindowContract
 	{
 		$this->setDefault('breadcrumbs', []);
 		$this->setDefault('sidebarCollapse', false);
-		
+
 		$this->setOptionals([
 			'title',
 			'logo_text',

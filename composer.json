@@ -9,7 +9,7 @@
 	],
     "require": {
         "vitlabs/gui-core": "*",
-        "vitlabs/gui-admin": "*",
+        "vitlabs/gui-admin": "*"
     },
     "autoload": {
         "psr-4": {

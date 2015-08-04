@@ -6,7 +6,7 @@ use Vitlabs\GUIAdmin\Contracts\Elements\LoginContract;
 use Vitlabs\GUICore\Traits\DataTrait;
 
 class Login extends Element implements LoginContract {
-    
+
 	use DataTrait;
 
 	public function needResources()

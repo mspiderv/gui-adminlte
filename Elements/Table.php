@@ -13,14 +13,23 @@ class Table extends Element implements TableContract {
         AttributesTrait::__construct as protected setAttributes;
     }
 
+    protected static $IDGenerator;
+
     /* Attributes */
     protected $columns = [];
     protected $rows = [];
 
     public function __construct()
     {
+        // Initialize ID Generator
+        if ( ! isset(self::$IDGenerator))
+        {
+            self::$IDGenerator = app('Vitlabs\GUICore\Contracts\IDGeneratorContract', ['table_']);
+        }
+
         $this->addClass('table table-bordered table-hover datatable');
         $this->setDefault('sortable', false);
+        $this->setAttribute('data-paging', config('gui-adminlte.table.paging'));
     }
 
     public function needResources()
@@ -51,12 +60,21 @@ class Table extends Element implements TableContract {
 
             ],
 
+            'config' => [
+                'gui-adminlte.table.sortURL'
+            ],
+
         ];
     }
 
     public function sortable($sortable = null)
     {
         return $this->getOrSet('sortable', $sortable);
+    }
+
+    public function paging($paging = null)
+    {
+        return $this->getOrSetAttribute('data-paging', $paging);
     }
 
     /* Cols */
@@ -68,28 +86,28 @@ class Table extends Element implements TableContract {
     public function addColumn($column)
     {
         $this->columns[] = $column;
-        
+
         return $this;
     }
 
     public function addColumns(array $columns)
     {
         $this->columns = array_merge($this->columns, $columns);
-        
+
         return $this;
     }
 
     public function removeColumn($column)
     {
         $this->columns = array_diff($this->columns, [$column]);
-        
+
         return $this;
     }
 
     public function removeColumns(array $columns)
     {
         $this->columns = array_diff($this->columns, $columns);
-        
+
         return $this;
     }
 
@@ -144,7 +162,7 @@ class Table extends Element implements TableContract {
 
     protected function createRow($data)
     {
-        return App::make('Vitlabs\GUIAdmin\Contracts\Elements\TableRowContract', [$data]);
+        return App::make('Vitlabs\GUIAdmin\Contracts\Elements\TableRowContract', [$data, $this]);
     }
 
     /* Other */

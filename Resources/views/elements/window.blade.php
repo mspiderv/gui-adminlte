@@ -250,6 +250,15 @@
     <script>
     // All assets are loaded now. Call handler.
     assetsLoaded();
+
+    // Set CSRF token
+    $(function() {
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': '{{ csrf_token() }}'
+            }
+        });
+    });
     </script>
 
 </body>
