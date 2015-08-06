@@ -13,20 +13,12 @@ class Table extends Element implements TableContract {
         AttributesTrait::__construct as protected setAttributes;
     }
 
-    protected static $IDGenerator;
-
     /* Attributes */
     protected $columns = [];
     protected $rows = [];
 
     public function __construct()
     {
-        // Initialize ID Generator
-        if ( ! isset(self::$IDGenerator))
-        {
-            self::$IDGenerator = app('Vitlabs\GUICore\Contracts\IDGeneratorContract', ['table_']);
-        }
-
         $this->addClass('table table-bordered table-hover datatable');
         $this->setDefault('sortable', false);
         $this->setAttribute('data-paging', config('gui-adminlte.table.paging'));

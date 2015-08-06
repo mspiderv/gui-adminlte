@@ -9,15 +9,17 @@ class GUIAdminLTEServiceProvider extends ImplementationServiceProvider
     protected $contractsNamespace = 'Vitlabs\GUIAdmin\Contracts\Elements\\';
 
     protected $implementationsNamespace = 'Vitlabs\GUIAdminLTE\Elements\\';
-    
+
     protected $bindElements = [
         'Accordion',
+        'Collapsible',
         'Box',
         'Window',
         'Icon',
         'Table',
         'TableRow',
         'Tag',
+        'Row',
         'Login',
     ];
 
