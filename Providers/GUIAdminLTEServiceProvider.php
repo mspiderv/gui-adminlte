@@ -12,15 +12,22 @@ class GUIAdminLTEServiceProvider extends ImplementationServiceProvider
 
     protected $bindElements = [
         'Accordion',
-        'Collapsible',
+        'Alert',
+        'Blank',
         'Box',
-        'Window',
+        'Callout',
+        'Collapsible',
+        'Container',
         'Icon',
+        'Login',
+        'ProgressBar',
+        'Row',
+        'Tab',
         'Table',
         'TableRow',
+        'Tabs',
         'Tag',
-        'Row',
-        'Login',
+        'Window',
     ];
 
     protected function getViewPath()

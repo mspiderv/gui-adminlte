@@ -8,7 +8,7 @@ use Vitlabs\GUICore\Traits\DataTrait;
 use Vitlabs\GUICore\Traits\ContainerTrait;
 
 class Box extends Element implements BoxContract {
-    
+
 	use AttributesTrait, ContainerTrait, DataTrait;
 
 	public function __construct($title, $state = 'default', $icon = '')
@@ -23,7 +23,7 @@ class Box extends Element implements BoxContract {
 	public function render()
 	{
 		$data = $this->getData();
-		
+
 		$data['body'] = $this->renderElements($this->getPositionElements('body'));
 		$data['footer'] = $this->renderElements($this->getPositionElements('footer'));
 
@@ -31,22 +31,16 @@ class Box extends Element implements BoxContract {
 
 		$attrs = $this->getAttributes();
 
-		// No class yet ?
-		if ( ! isset($attrs['class']))
-		{
-			$attrs['class'] = '';
-		}
-
 		// Solid ?
 		if (config('gui-adminlte.box.solid'))
 		{
-			$attrs['class'] .= ' box-solid';
+            $this->addClass('box-solid', $attrs);
 		}
 
 		// Append state
 		if ($this->get('state') != '')
 		{
-			$attrs['class'] .= ' box-' . $this->get('state');
+            $this->addClass('box-' . $this->get('state'), $attrs);
 		}
 
 		$data['attrs'] = $this->parseAttributes(true, $attrs);

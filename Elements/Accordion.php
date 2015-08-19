@@ -2,8 +2,8 @@
 
 namespace Vitlabs\GUIAdminLTE\Elements;
 
-use Vitlabs\GUIAdmin\Contracts\Elements\CollapsibleContract;
 use Vitlabs\GUIAdmin\Contracts\Elements\AccordionContract;
+use Vitlabs\GUIAdmin\Contracts\Elements\CollapsibleContract;
 use Vitlabs\GUICore\Contracts\Elements\ElementContract;
 use Vitlabs\GUICore\Traits\DataTrait;
 use Vitlabs\GUICore\Traits\ContainerTrait;
@@ -49,6 +49,11 @@ class Accordion extends Element implements AccordionContract {
     	$this->container[$position][] = $e;
 
     	return $this;
+    }
+
+    public function active($active = null)
+    {
+        return $this->getOrSet('active', $active);
     }
 
 }
