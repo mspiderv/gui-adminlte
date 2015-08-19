@@ -1,0 +1,1 @@
+<ul{!! $attrs !!}>{!! $content !!}</ul>

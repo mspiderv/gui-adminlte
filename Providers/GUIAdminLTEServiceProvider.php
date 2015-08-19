@@ -22,6 +22,7 @@ class GUIAdminLTEServiceProvider extends ImplementationServiceProvider
         'Callout',
         'Collapsible',
         'Container',
+        'Dropdown',
         'HTML',
         'Icon',
         'Login',

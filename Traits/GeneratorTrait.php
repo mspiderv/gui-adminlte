@@ -26,5 +26,6 @@ trait GeneratorTrait {
     public function buttonApplication($content = '', $tag = 'a', $icon = '', $badge = '', $badgeBg = 'default') { return $this->generate(__FUNCTION__, func_get_args()); }
     public function buttonGroup(array $container = []) { return $this->generate(__FUNCTION__, func_get_args()); }
     public function buttonDropdown($state = 'default', $size = '') { return $this->generate(__FUNCTION__, func_get_args()); }
+    public function dropdown(array $container = []) { return $this->generate(__FUNCTION__, func_get_args()); }
 
 }
