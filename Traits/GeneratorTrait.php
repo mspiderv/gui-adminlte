@@ -21,5 +21,6 @@ trait GeneratorTrait {
     public function callout($heading, $state = 'info', $content = null) { return $this->generate(__FUNCTION__, func_get_args()); }
     public function container(array $container = []) { return $this->generate(__FUNCTION__, func_get_args()); }
     public function progressBar($value = 0, $state = 'default', $vertical = false) { return $this->generate(__FUNCTION__, func_get_args()); }
+    public function HTML($content = '') { return $this->generate(__FUNCTION__, func_get_args()); }
 
 }
