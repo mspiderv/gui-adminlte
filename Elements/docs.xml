@@ -1,0 +1,682 @@
+<elements>
+
+	<!--
+	<element name="userPanel" class="BasicElement.php" view="userPanel.blade.php" constructor="Data">
+		<components>
+			<component>Attributes</component>
+			<component>Collapsible</component>
+			<component>Container</component>
+			<component>Data</component>
+			<component>Tab</component>
+		</components>
+		<variables>
+			<variable required="true" default="">title</variable>
+			<variable required="true" default="">state</variable>
+			<variable required="true" default="">href</variable>
+			<variable required="true" default="">image</variable>
+		</variables>
+	</element>
+	-->
+
+	<element name="window" class="Window.php" view="window.blade.php" constructor="Data">
+		<components>
+			<component>Container</component>
+			<component>Data</component>
+		</components>
+		<positions default="content">
+			<position>content</position>
+			<position>sidebar</position>
+			<position>navbar</position>
+			<position>footer</position>
+		</positions>
+		<variables>
+			<variable required="false" default="[]">breadcrumbs</variable>
+			<variable required="false" default="blue">skin</variable>
+			<variable required="false" default="fixed">layout</variable>
+			<variable required="false" default="false">sidebarCollapse</variable>
+			<variable required="false" default="">title</variable>
+			<variable required="false" default="">logo_text</variable>
+			<variable required="false" default="$logo_href">mini_logo_text</variable>
+			<variable required="false" default="">logo_href</variable>
+			<variable required="false" default="">heading</variable>
+			<variable required="false" default="">heading_small</variable>
+			<variable required="false" default="">favicon</variable>
+		</variables>
+		<methods>
+			<method access="public">addBreadcrumb(array $breadcrumb)</method>
+		</methods>
+	</element>
+
+	<element name="userPanel" class="BasicElement.php" view="userPanel.blade.php" constructor="Data">
+		<components>
+			<component>Data</component>
+		</components>
+		<variables>
+			<variable required="true" default="">title</variable>
+			<variable required="true" default="">state</variable>
+			<variable required="true" default="">href</variable>
+			<variable required="true" default="">image</variable>
+		</variables>
+	</element>
+
+	<element name="searchForm" class="BasicElement.php" view="searchForm.blade.php" constructor="Data">
+		<components>
+			<component>Data</component>
+		</components>
+		<variables>
+			<variable required="true" default="">action</variable>
+			<variable required="true" default="">method</variable>
+			<variable required="true" default="">name</variable>
+			<variable required="true" default="">placeholder</variable>
+		</variables>
+	</element>
+
+	<element name="sidebarMenu" class="SidebarMenu.php" view="sidebarMenu.blade.php" constructor="Container">
+		<components>
+			<component>Container</component>
+		</components>
+		<positions default="default">
+			<position>default</position>
+		</positions>
+	</element>
+
+	<element name="sidebarMenuHeader" class="BasicElement.php" view="sidebarMenuHeader.blade.php" constructor="Data">
+		<components>
+			<component>Data</component>
+		</components>
+		<variables>
+			<variable required="true" default="">content</variable>
+		</variables>
+	</element>
+
+	<element name="sidebarMenuLink" class="SidebarMenuLink.php" view="sidebarMenuLink.blade.php" constructor="Data">
+		<components>
+			<component>Attributes</component>
+			<component>Data</component>
+		</components>
+		<variables>
+			<variable required="true" default="">text</variable>
+			<variable required="false" default="">icon</variable>
+			<variable required="false" default="">badge</variable>
+			<variable required="false" default="green">badgeBg</variable>
+			<variable required="false" default="false">active</variable>
+		</variables>
+	</element>
+
+	<element name="sidebarMenuTreeview" class="SidebarMenuTreeview.php" view="sidebarMenuTreeview.blade.php" constructor="Data">
+		<components>
+			<component>Container</component>
+			<component>Data</component>
+		</components>
+		<positions default="default">
+			<position>default</position>
+		</positions>
+		<variables>
+			<variable required="true" default="">text</variable>
+			<variable required="false" default="">icon</variable>
+			<variable required="false" default="">badge</variable>
+			<variable required="false" default="green">badgeBg</variable>
+			<variable required="false" default="false">active</variable>
+		</variables>
+	</element>
+
+	<element name="HTML" class="HTML.php" view="" constructor="Custom">
+		<components>
+			<component>Data</component>
+		</components>
+		<variables>
+			<variable required="true" default="">content</variable>
+		</variables>
+		<methods>
+			<method access="public">__construct($content = '')</method>
+		</methods>
+	</element>
+
+	<element name="icon" class="Icon.php" view="icon.blade.php" constructor="Custom">
+		<components>
+			<component>Data</component>
+		</components>
+		<variables>
+			<variable required="true" default="">icon</variable>
+		</variables>
+		<methods>
+			<method access="public">__construct($icon = '')</method>
+		</methods>
+	</element>
+
+	<element name="smallBox" class="SmallBox.php" view="smallBox.blade.php" constructor="Data">
+		<components>
+			<component>Data</component>
+		</components>
+		<variables>
+			<variable required="false" default="aqua">bgColor</variable>
+			<variable required="false" default="">bgIcon</variable>
+			<variable required="false" default="">heading</variable>
+			<variable required="false" default="">text</variable>
+			<variable required="false" default="">buttonText</variable>
+			<variable required="false" default="">buttonHref</variable>
+		</variables>
+	</element>
+
+	<element name="header" class="BasicElement.php" view="header.blade.php" constructor="Data">
+		<components>
+			<component>Data</component>
+		</components>
+		<variables>
+			<variable required="true" default="">heading</variable>
+			<variable required="false" default="">subheading</variable>
+		</variables>
+	</element>
+
+	<element name="box" class="Box.php" view="box.blade.php" constructor="Data">
+		<components>
+			<component>Container</component>
+			<component>Data</component>
+		</components>
+		<positions default="body">
+			<position>tools</position>
+			<position>body</position>
+			<position>footer</position>
+		</positions>
+		<variables>
+			<variable required="false" default="default">state</variable>
+			<variable required="false" default="">icon</variable>
+			<variable required="false" default="">title</variable>
+			<variable required="false" default="false">solid</variable>
+			<variable required="false" default="">bg</variable>
+		</variables>
+	</element>
+
+	<element name="row" class="Row.php" view="row.blade.php" constructor="Custom">
+		<components>
+			<component>Container</component>
+		</components>
+		<positions default="default">
+			<position>default</position>
+		</positions>
+		<methods>
+			<method access="public">__construct('col-lg-3 col-xs-6', 'col-lg-3 col-xs-6' ...)</method>
+		</methods>
+	</element>
+
+	<element name="alert" class="Alert.php" view="alert.blade.php" constructor="Data">
+		<components>
+			<component>Data</component>
+		</components>
+		<variables>
+			<variable required="true" default="">state</variable>
+			<variable required="true" default="">icon</variable>
+			<variable required="true" default="">content</variable>
+			<variable required="true" default="">description</variable>
+			<variable required="false" default="true">dismissable</variable>
+		</variables>
+	</element>
+
+	<element name="alertDanger" class="AlertDanger.php" view="alert.blade.php" constructor="Custom">
+		<components>
+			<component>Data</component>
+		</components>
+		<variables>
+			<variable required="false" default="danger">state</variable>
+			<variable required="false" default="fa fa-ban">icon</variable>
+			<variable required="false" default="">content</variable>
+			<variable required="false" default="">description</variable>
+			<variable required="false" default="true">dismissable</variable>
+		</variables>
+		<methods>
+			<method access="public">__construct($content = '')</method>
+		</methods>
+	</element>
+
+	<element name="alertInfo" class="AlertInfo.php" view="alert.blade.php" constructor="Custom">
+		<components>
+			<component>Data</component>
+		</components>
+		<variables>
+			<variable required="false" default="info">state</variable>
+			<variable required="false" default="fa fa-info">icon</variable>
+			<variable required="false" default="">content</variable>
+			<variable required="false" default="">description</variable>
+			<variable required="false" default="true">dismissable</variable>
+		</variables>
+		<methods>
+			<method access="public">__construct($content = '')</method>
+		</methods>
+	</element>
+
+	<element name="alertWarning" class="AlertWarning.php" view="alert.blade.php" constructor="Custom">
+		<components>
+			<component>Data</component>
+		</components>
+		<variables>
+			<variable required="false" default="warning">state</variable>
+			<variable required="false" default="fa fa-warning">icon</variable>
+			<variable required="false" default="">content</variable>
+			<variable required="false" default="">description</variable>
+			<variable required="false" default="true">dismissable</variable>
+		</variables>
+		<methods>
+			<method access="public">__construct($content = '')</method>
+		</methods>
+	</element>
+
+	<element name="alertSuccess" class="AlertSuccess.php" view="alert.blade.php" constructor="Custom">
+		<components>
+			<component>Data</component>
+		</components>
+		<variables>
+			<variable required="false" default="success">state</variable>
+			<variable required="false" default="fa fa-check">icon</variable>
+			<variable required="false" default="">content</variable>
+			<variable required="false" default="">description</variable>
+			<variable required="false" default="true">dismissable</variable>
+		</variables>
+		<methods>
+			<method access="public">__construct($content = '')</method>
+		</methods>
+	</element>
+
+	<element name="callout" class="Callout.php" view="callout.blade.php" constructor="Data">
+		<components>
+			<component>Data</component>
+		</components>
+		<variables>
+			<variable required="true" default="">heading</variable>
+			<variable required="false" default="default">state</variable>
+			<variable required="false" default="">content</variable>
+		</variables>
+		<methods>
+			<method access="public">__construct($heading, $content = '', $state = 'default')</method>
+		</methods>
+	</element>
+
+	<element name="tabs" class="Tabs.php" view="tabs.blade.php" constructor="Data">
+		<components>
+			<component>Data</component>
+			<component>Container</component>
+		</components>
+		<positions default="tabs">
+			<position>tabs</position>
+			<position>tools</position>
+		</positions>
+		<variables>
+			<variable required="false" default="">title</variable>
+			<variable required="fasle" default="">icon</variable>
+			<variable required="false" default="1">active</variable>
+			<variable required="false" default="false">pullRight</variable>
+		</variables>
+	</element>
+
+	<element name="tab" class="Tab.php" view="" constructor="Custom">
+		<components>
+			<component>Tab</component>
+			<component>Data</component>
+			<component>Container</component>
+		</components>
+		<positions default="default">
+			<position>default</position>
+		</positions>
+		<variables>
+			<variable required="false" default="">title</variable>
+		</variables>
+		<methods>
+			<method access="public">__construct($title = '')</method>
+			<method access="public">getTabId()</method>
+			<method access="public">getTitle()</method>
+			<method access="public">getContent()</method>
+		</methods>
+	</element>
+
+	<element name="accordion" class="Accordion.php" view="accordion.blade.php" constructor="Data">
+		<components>
+			<component>Data</component>
+			<component>Container</component>
+		</components>
+		<positions default="default">
+			<position>default</position>
+		</positions>
+		<variables>
+			<variable required="false" default="1">active</variable>
+		</variables>
+	</element>
+
+	<element name="collapsible" class="Collapsible.php" view="collapsible.blade.php" constructor="Custom">
+		<components>
+			<component>Data</component>
+			<component>Container</component>
+			<component>Collapsible</component>
+		</components>
+		<positions default="default">
+			<position>default</position>
+		</positions>
+		<variables>
+			<variable required="true" default="">title</variable>
+			<variable required="false" default="default">state</variable>
+		</variables>
+		<methods>
+			<method access="public">__construct($title = '', $state = 'default')</method>
+			<method access="public">getCollapsibleId()</method>
+			<method access="public">getTitle()</method>
+			<method access="public">getContent()</method>
+			<method access="public">getState()</method>
+		</methods>
+	</element>
+
+	<element name="tag" class="Tag.php" view="tag.blade.php" constructor="Custom">
+		<components>
+			<component>Data</component>
+			<component>Attributes</component>
+		</components>
+		<variables>
+			<variable required="true" default="">tag</variable>
+			<variable required="false" default="">content</variable>
+			<variable required="false" default="true">paired</variable>
+		</variables>
+		<methods>
+			<method access="public">__construct($tag, $content = '', $paired = true, $attributes = [])</method>
+		</methods>
+	</element>
+
+	<element name="tag" class="Tag.php" view="tag.blade.php" constructor="Custom">
+		<components>
+			<component>Data</component>
+			<component>Attributes</component>
+		</components>
+		<variables>
+			<variable required="true" default="">tag</variable>
+			<variable required="false" default="">content</variable>
+			<variable required="false" default="true">paired</variable>
+		</variables>
+		<methods>
+			<method access="public">__construct($tag, $content = '', $paired = true, $attributes = [])</method>
+		</methods>
+	</element>
+
+	<element name="button" class="Button.php" view="tag.blade.php" constructor="Custom">
+		<components>
+			<component>Data</component>
+			<component>Attributes</component>
+		</components>
+		<variables>
+			<variable required="false" default="">content</variable>
+			<variable required="false" default="default">state</variable>
+			<variable required="false" default="a">tag</variable>
+			<variable required="false" default="false">dropdown</variable>
+			<variable required="false" default="">size</variable>
+			<variable required="false" default="false">flat</variable>
+			<variable required="false" default="false">disabled</variable>
+			<variable required="false" default="false">block</variable>
+			<variable required="false" default="">bg</variable>
+			<variable required="false" default="">social</variable>
+			<variable required="false" default="true">socialOnlyIcon</variable>
+		</variables>
+		<methods>
+			<method access="public">__construct($content = '', $state = 'default', $tag = 'a', $dropdown = false, $size = '', $attributes = [])</method>
+		</methods>
+	</element>
+
+	<element name="buttonSocial" class="ButtonSocial.php" view="tag.blade.php" constructor="Custom">
+		<components>
+			<component>Data</component>
+			<component>Attributes</component>
+		</components>
+		<variables>
+			<variable required="false" default="">content</variable>
+			<variable required="false" default="default">state</variable>
+			<variable required="false" default="a">tag</variable>
+			<variable required="false" default="false">dropdown</variable>
+			<variable required="false" default="">size</variable>
+			<variable required="false" default="false">flat</variable>
+			<variable required="false" default="false">disabled</variable>
+			<variable required="false" default="false">block</variable>
+			<variable required="false" default="">bg</variable>
+			<variable required="false" default="">social</variable>
+			<variable required="false" default="true">socialOnlyIcon</variable>
+		</variables>
+		<methods>
+			<method access="public">__construct($social = '', $content = '', $icon = null, $attributes = [])</method>
+		</methods>
+	</element>
+
+	<element name="form" class="Form.php" view="form.blade.php" constructor="Data">
+		<components>
+			<component>Data</component>
+			<component>Container</component>
+		</components>
+		<positions default="default">
+			<position>default</position>
+		</positions>
+		<variables>
+			<variable required="false" default="[]">form</variable>
+		</variables>
+	</element>
+
+	<element name="buttonGroup" class="ButtonGroup.php" view="buttonGroup.blade.php" constructor="Container">
+		<components>
+			<component>Data</component>
+			<component>Container</component>
+		</components>
+		<positions default="default">
+			<position>default</position>
+		</positions>
+		<variables>
+			<variable required="false" default="false">vertical</variable>
+		</variables>
+	</element>
+
+	<element name="buttonDropdown" class="ButtonDropdown.php" view="tag.blade.php" constructor="Custom">
+		<components>
+			<component>Data</component>
+			<component>Attributes</component>
+		</components>
+		<variables>
+			<variable required="false" default="<span class=\"caret\"></span>">content</variable>
+			<variable required="false" default="default">state</variable>
+			<variable required="false" default="button">tag</variable>
+			<variable required="false" default="true">dropdown</variable>
+			<variable required="false" default="">size</variable>
+			<variable required="false" default="false">flat</variable>
+			<variable required="false" default="false">disabled</variable>
+			<variable required="false" default="false">block</variable>
+			<variable required="false" default="">bg</variable>
+			<variable required="false" default="">social</variable>
+			<variable required="false" default="true">socialOnlyIcon</variable>
+		</variables>
+		<methods>
+			<method access="public">__construct($state = 'default', $size = '', $attributes = [])</method>
+		</methods>
+	</element>
+
+	<element name="dropdown" class="Dropdown.php" view="dropdown.blade.php" constructor="Container">
+		<components>
+			<component>Container</component>
+		</components>
+		<positions default="default">
+			<position>default</position>
+		</positions>
+	</element>
+
+	<element name="dropdownDivider" class="BasicElement.php" view="dropdownDivider.blade.php" constructor="Data">
+		<components>
+			<component>Data</component>
+		</components>
+	</element>
+
+	<element name="dropdownItem" class="DropdownItem.php" view="dropdownItem.blade.php" constructor="Custom">
+		<components>
+			<component>Data</component>
+			<component>Attributes</component>
+		</components>
+		<variables>
+			<variable required="false" default="">content</variable>
+		</variables>
+		<methods>
+			<method access="public">__construct($content = '', $href = '#', $attributes = [])</method>
+		</methods>
+	</element>
+
+	<element name="progressBar" class="ProgressBar.php" view="progressBar.blade.php" constructor="Custom">
+		<components>
+			<component>Data</component>
+			<component>Attributes</component>
+		</components>
+		<variables>
+			<variable required="false" default="">size</variable>
+			<variable required="false" default="true">striped</variable>
+			<variable required="false" default="true">active</variable>
+			<variable required="false" default="false">vertical</variable>
+			<variable required="false" default="default">state</variable>
+			<variable required="false" default="0">min</variable>
+			<variable required="false" default="100">max</variable>
+			<variable required="false" default="">percents</variable>
+		</variables>
+		<methods>
+			<method access="public">__construct($content = '', $href = '#', $attributes = [])</method>
+		</methods>
+	</element>
+
+	<element name="tagContainer" class="TagContainer.php" view="tag.blade.php" constructor="Custom">
+		<components>
+			<component>Container</component>
+			<component>Attributes</component>
+		</components>
+		<positions default="default">
+			<position>default</position>
+		</positions>
+		<methods>
+			<method access="public">__construct($class = null)</method>
+		</methods>
+	</element>
+
+	<element name="input" class="Input.php" view="tag.blade.php" constructor="Empty">
+		<components>
+			<component>Form</component>
+		</components>
+		<methods>
+			<method access="public">type($type = null)</method>
+			<method access="public">height($height = null)</method>
+		</methods>
+	</element>
+
+	<element name="email" class="Email.php" view="tag.blade.php" constructor="Empty">
+		<components>
+			<component>Form</component>
+		</components>
+		<methods>
+			<method access="public">type($type = null)</method>
+			<method access="public">height($height = null)</method>
+		</methods>
+	</element>
+
+	<element name="password" class="Password.php" view="tag.blade.php" constructor="Empty">
+		<components>
+			<component>Form</component>
+		</components>
+		<methods>
+			<method access="public">type($type = null)</method>
+			<method access="public">height($height = null)</method>
+		</methods>
+	</element>
+
+	<element name="file" class="File.php" view="tag.blade.php" constructor="Empty">
+		<components>
+			<component>Form</component>
+		</components>
+		<methods>
+			<method access="public">type($type = null)</method>
+			<method access="public">height($height = null)</method>
+		</methods>
+	</element>
+
+	<element name="textarea" class="Textarea.php" view="tag.blade.php" constructor="Empty">
+		<components>
+			<component>Form</component>
+		</components>
+	</element>
+
+	<element name="select" class="Select.php" view="select.blade.php" constructor="Empty">
+		<components>
+			<component>Form</component>
+		</components>
+		<methods>
+			<method access="public">multiple($multiple = true)</method>
+			<method access="public">isMultiple()</method>
+			<method access="public">options($options = null)</method>
+		</methods>
+	</element>
+
+	<element name="radio" class="Radio.php" view="tag.blade.php" constructor="Empty">
+		<components>
+			<component>Form</component>
+		</components>
+		<methods>
+			<method access="public">check()</method>
+			<method access="public">uncheck()</method>
+		</methods>
+	</element>
+
+	<element name="checkbox" class="Checkbox.php" view="tag.blade.php" constructor="Empty">
+		<components>
+			<component>Form</component>
+		</components>
+		<methods>
+			<method access="public">check()</method>
+			<method access="public">uncheck()</method>
+		</methods>
+	</element>
+
+	<element name="checkbox" class="Checkbox.php" view="tag.blade.php" constructor="Custom">
+		<components>
+			<component>Data</component>
+			<component>Attributes</component>
+		</components>
+		<methods>
+			<method access="public">__construct($value = '', $state = 'primary', $dropdown = false, $size = '', $attributes = [])</method>
+		</methods>
+	</element>
+
+	<element name="toolRemove" class="ToolRemove.php" view="none" constructor="Empty">
+		<components>
+			<component>Data</component>
+		</components>
+		<variables>
+			<variable required="true" default="">content</variable>
+		</variables>
+	</element>
+
+	<element name="toolCollapse" class="ToolCollapse.php" view="" constructor="Empty">
+		<components>
+			<component>Data</component>
+		</components>
+		<variables>
+			<variable required="true" default="">content</variable>
+		</variables>
+	</element>
+
+	<element name="infoBox" class="BasicElement.php" view="infoBox.blade.php" constructor="Data">
+		<components>
+			<component>Data</component>
+		</components>
+		<variables>
+			<variable required="false" default="">bg</variable>
+			<variable required="false" default="">icon</variable>
+			<variable required="false" default="">heading</variable>
+			<variable required="false" default="">content</variable>
+		</variables>
+	</element>
+
+	<element name="progressBox" class="BasicElement.php" view="progressBox.blade.php" constructor="Data">
+		<components>
+			<component>Data</component>
+		</components>
+		<variables>
+			<variable required="false" default="">bg</variable>
+			<variable required="false" default="">icon</variable>
+			<variable required="false" default="">heading</variable>
+			<variable required="false" default="">content</variable>
+			<variable required="false" default="0">value</variable>
+			<variable required="false" default="">progress</variable>
+		</variables>
+	</element>
+
+</elements>
