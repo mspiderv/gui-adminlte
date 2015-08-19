@@ -78,7 +78,7 @@ class Button extends Element implements ButtonContract {
         // Size
         if ($this->get('size') != '')
         {
-            $$this->addClass('btn-' . $this->get('size'), $attrs);
+            $this->addClass('btn-' . $this->get('size'), $attrs);
         }
 
         // Dropdown class
