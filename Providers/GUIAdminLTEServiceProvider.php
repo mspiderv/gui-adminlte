@@ -15,6 +15,7 @@ class GUIAdminLTEServiceProvider extends ImplementationServiceProvider
         'Alert',
         'Blank',
         'Box',
+        'Button',
         'Callout',
         'Collapsible',
         'Container',

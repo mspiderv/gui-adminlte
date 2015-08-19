@@ -22,5 +22,6 @@ trait GeneratorTrait {
     public function container(array $container = []) { return $this->generate(__FUNCTION__, func_get_args()); }
     public function progressBar($value = 0, $state = 'default', $vertical = false) { return $this->generate(__FUNCTION__, func_get_args()); }
     public function HTML($content = '') { return $this->generate(__FUNCTION__, func_get_args()); }
+    public function button($content = '', $state = 'default', $tag = 'a', $dropdown = false, $size = '') { return $this->generate(__FUNCTION__, func_get_args()); }
 
 }
