@@ -24,6 +24,7 @@ trait GeneratorTrait {
     public function HTML($content = '') { return $this->generate(__FUNCTION__, func_get_args()); }
     public function button($content = '', $state = 'default', $tag = 'a', $dropdown = false, $size = '') { return $this->generate(__FUNCTION__, func_get_args()); }
     public function buttonApplication($content = '', $tag = 'a', $icon = '', $badge = '', $badgeBg = 'default') { return $this->generate(__FUNCTION__, func_get_args()); }
+    public function buttonSocial($social = '', $content = '', $icon = null) { return $this->generate(__FUNCTION__, func_get_args()); }
     public function buttonGroup(array $container = []) { return $this->generate(__FUNCTION__, func_get_args()); }
     public function buttonDropdown($state = 'default', $size = '') { return $this->generate(__FUNCTION__, func_get_args()); }
     public function dropdown(array $container = []) { return $this->generate(__FUNCTION__, func_get_args()); }

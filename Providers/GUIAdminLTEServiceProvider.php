@@ -19,6 +19,7 @@ class GUIAdminLTEServiceProvider extends ImplementationServiceProvider
         'ButtonApplication',
         'ButtonDropdown',
         'ButtonGroup',
+        'ButtonSocial',
         'Callout',
         'Collapsible',
         'Container',
