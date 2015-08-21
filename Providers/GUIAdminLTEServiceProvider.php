@@ -27,6 +27,7 @@ class GUIAdminLTEServiceProvider extends ImplementationServiceProvider
         'DropdownItem',
         'HTML',
         'Icon',
+        'InfoWidget',
         'Login',
         'ProgressBar',
         'Row',
