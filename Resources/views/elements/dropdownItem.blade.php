@@ -1,0 +1,1 @@
+<li><a {!! $attrs !!}>{!! $content !!}</a></li>

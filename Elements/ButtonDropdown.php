@@ -83,7 +83,7 @@ class ButtonDropdown extends Element implements ButtonDropdownContract {
         // Dropdown data attribute
         if ($this->get('dropdown'))
         {
-            $this->attr('data-toggle', 'dropdown');
+            $this->attr('data-toggle', 'dropdown', $attrs);
         }
 
         // Get data

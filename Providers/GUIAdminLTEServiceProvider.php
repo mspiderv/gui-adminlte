@@ -23,6 +23,8 @@ class GUIAdminLTEServiceProvider extends ImplementationServiceProvider
         'Collapsible',
         'Container',
         'Dropdown',
+        'DropdownDivider',
+        'DropdownItem',
         'HTML',
         'Icon',
         'Login',
@@ -33,6 +35,7 @@ class GUIAdminLTEServiceProvider extends ImplementationServiceProvider
         'TableRow',
         'Tabs',
         'Tag',
+        'TagContainer',
         'Window',
     ];
 

@@ -27,5 +27,8 @@ trait GeneratorTrait {
     public function buttonGroup(array $container = []) { return $this->generate(__FUNCTION__, func_get_args()); }
     public function buttonDropdown($state = 'default', $size = '') { return $this->generate(__FUNCTION__, func_get_args()); }
     public function dropdown(array $container = []) { return $this->generate(__FUNCTION__, func_get_args()); }
+    public function dropdownItem($content = '', $href = '#', $attributes = []) { return $this->generate(__FUNCTION__, func_get_args()); }
+    public function dropdownDivider() { return $this->generate(__FUNCTION__, func_get_args()); }
+    public function tagContainer($tag = 'div', $class = null) { return $this->generate(__FUNCTION__, func_get_args()); }
 
 }
