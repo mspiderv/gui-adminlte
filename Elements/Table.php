@@ -9,9 +9,7 @@ use Vitlabs\GUICore\Traits\DataTrait;
 
 class Table extends Element implements TableContract {
 
-    use AttributesTrait, DataTrait {
-        AttributesTrait::__construct as protected setAttributes;
-    }
+    use AttributesTrait, DataTrait;
 
     /* Attributes */
     protected $columns = [];

@@ -8,9 +8,7 @@ use Vitlabs\GUICore\Traits\AttributesTrait;
 
 class TableRow extends Element implements TableRowContract {
 
-    use AttributesTrait {
-        AttributesTrait::__construct as protected setAttributes;
-    }
+    use AttributesTrait;
 
     protected $table;
     protected $cells = [];

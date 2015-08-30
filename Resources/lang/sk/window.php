@@ -1,7 +1,11 @@
-<?php 
+<?php
 
 return [
 
-	'searchPlaceholder' => 'Hľadať...',
+    'searchPlaceholder' => 'Hľadať...',
+
+    'showWeb' => 'Zobraziť web',
+
+	'logout' => 'Odhlásiť sa',
 
 ];

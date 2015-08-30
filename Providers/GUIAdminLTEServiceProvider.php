@@ -21,17 +21,24 @@ class GUIAdminLTEServiceProvider extends ImplementationServiceProvider
         'ButtonGroup',
         'ButtonSocial',
         'Callout',
+        'Checkbox',
         'Collapsible',
         'Container',
         'Dropdown',
         'DropdownDivider',
         'DropdownItem',
+        'Email',
+        'File',
+        'Form',
         'HTML',
         'Icon',
         'InfoWidget',
+        'Input',
         'Login',
+        'Password',
         'ProgressBar',
         'Row',
+        'Submit',
         'Tab',
         'Table',
         'TableRow',
@@ -43,7 +50,7 @@ class GUIAdminLTEServiceProvider extends ImplementationServiceProvider
 
     protected function getViewPath()
     {
-        return __DIR__ . '/../Resources/views/elements/';
+        return __DIR__ . '/../Resources/views/';
     }
 
     protected function getAssetsPath()

@@ -8,9 +8,7 @@ use Vitlabs\GUICore\Traits\AttributesTrait;
 
 class Tag extends Element implements TagContract {
 
-    use AttributesTrait, DataTrait {
-		AttributesTrait::__construct as protected setAttributes;
-	}
+    use AttributesTrait, DataTrait;
 
     public function __construct($tag, $content = '', $paired = true, $attributes = [])
     {
@@ -29,5 +27,5 @@ class Tag extends Element implements TagContract {
 
     	return $this->renderView('tag', $data);
     }
-    
+
 }

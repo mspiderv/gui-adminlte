@@ -8,9 +8,7 @@ use Vitlabs\GUICore\Traits\AttributesTrait;
 
 class ButtonApplication extends Element implements ButtonApplicationContract {
 
-    use AttributesTrait, DataTrait {
-        AttributesTrait::__construct as protected setAttributes;
-    }
+    use AttributesTrait, DataTrait;
 
     public function __construct($content = '', $tag = 'a', $icon = '', $badge = '', $badgeBg = 'default')
     {

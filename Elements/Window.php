@@ -5,12 +5,17 @@ namespace Vitlabs\GUIAdminLTE\Elements;
 use Vitlabs\GUIAdmin\Contracts\Elements\WindowContract;
 use Vitlabs\GUICore\Traits\ContainerTrait;
 use Vitlabs\GUICore\Traits\DataTrait;
+use Vitlabs\GUIAdminLTE\MenuPresenters\BasicMenuPresenter;
+use Vitlabs\GUIAdminLTE\MenuPresenters\BootstrapNavbarMenuPresenter;
 
 class Window extends Element implements WindowContract
 {
 	use ContainerTrait, DataTrait {
 		DataTrait::__construct insteadof ContainerTrait;
 	}
+
+    protected $sidebarMenuPresenter = null;
+    protected $navbarMenuPresenter = null;
 
 	public function needResources()
 	{
@@ -82,6 +87,8 @@ class Window extends Element implements WindowContract
 			'heading',
 			'heading_small',
 			'favicon',
+            'webURL',
+            'logoutURL',
 		]);
 
 		$data = $this->getData();
@@ -96,7 +103,14 @@ class Window extends Element implements WindowContract
 		$data['searchName'] = config('gui-adminlte.search.name');
 		$data['searchMethod'] = config('gui-adminlte.search.method');
 		$data['searchAction'] = config('gui-adminlte.search.action');
-		$data['searchPlaceholder'] = trans('gui-adminlte::window.searchPlaceholder');
+
+        $data['searchPlaceholder'] = trans('gui-adminlte::window.searchPlaceholder');
+        $data['showWeb'] = trans('gui-adminlte::window.showWeb');
+        $data['logout'] = trans('gui-adminlte::window.logout');
+
+        // Menus
+        $data['sidebarMenu'] = $this->getSidebarMenuPresenter()->present($this->getMenu('sidebar'));
+        $data['navbarMenu'] = $this->getNavbarMenuPresenter()->present($this->getMenu('navbar'));
 
 		return $this->renderView('window', $data);
 	}
@@ -112,4 +126,59 @@ class Window extends Element implements WindowContract
 	{
 		return 'content';
 	}
+
+    public function getSidebarMenu()
+    {
+        return $this->getMenu('sidebar');
+    }
+
+    public function getNavbarMenu()
+    {
+        return $this->getMenu('navbar');
+    }
+
+    protected function getSidebarMenuPresenter()
+    {
+        if ($this->sidebarMenuPresenter == null)
+        {
+            /* Menu presenter */
+            // Create menu presenter
+            $this->sidebarMenuPresenter = new BasicMenuPresenter();
+
+            // Config
+            $this->sidebarMenuPresenter->setWrapClass('sidebar-menu');
+            $this->sidebarMenuPresenter->setHeadingClass('header');
+            $this->sidebarMenuPresenter->setLinkTitleTag('span');
+            $this->sidebarMenuPresenter->setLinkClassWithSubmenu('treeview');
+            $this->sidebarMenuPresenter->setLinkTitleSuffixWithSubmenu('<i class="fa fa-angle-left pull-right"></i>');
+
+            /* Submenu presenter*/
+            // Create submenu presenter
+            $submenuPresenter = new BasicMenuPresenter('sidebar-menu');
+
+            // Resursive presenters
+            $submenuPresenter->setSubmenuPresenter($submenuPresenter);
+
+            // Set submenu presenter to menu presenter
+            $this->sidebarMenuPresenter->setSubmenuPresenter($submenuPresenter);
+
+            // Config
+            $submenuPresenter->setWrapClass('treeview-menu');
+            $submenuPresenter->setLinkTitleTag('span');
+            $submenuPresenter->setLinkTitleSuffixWithSubmenu('<i class="fa fa-angle-left pull-right"></i>');
+        }
+
+        return $this->sidebarMenuPresenter;
+    }
+
+    protected function getNavbarMenuPresenter()
+    {
+        if ($this->navbarMenuPresenter == null)
+        {
+            $this->navbarMenuPresenter = new BootstrapNavbarMenuPresenter;
+        }
+
+        return $this->navbarMenuPresenter;
+    }
+
 }

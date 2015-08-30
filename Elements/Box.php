@@ -9,7 +9,9 @@ use Vitlabs\GUICore\Traits\ContainerTrait;
 
 class Box extends Element implements BoxContract {
 
-	use AttributesTrait, ContainerTrait, DataTrait;
+	use AttributesTrait, ContainerTrait, DataTrait {
+        ContainerTrait::__call insteadof AttributesTrait, DataTrait;
+    }
 
 	public function __construct($title, $state = 'default', $icon = '')
 	{

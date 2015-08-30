@@ -8,4 +8,9 @@ abstract class Element {
 
     use ElementTrait;
 
+    public function getViewsFolder()
+    {
+        return 'elements';
+    }
+
 }
