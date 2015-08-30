@@ -1,6 +1,6 @@
 <div{!! $attrs !!}>
     @if (isset($title) || isset($icon))
-    <div class="box-header">
+    <div class="{!! $headerClass !!}">
         @if (isset($icon))
         <i class="{!! $icon !!}"></i>
         @endif

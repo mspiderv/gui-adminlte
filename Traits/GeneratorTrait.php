@@ -39,5 +39,8 @@ trait GeneratorTrait {
     public function password() { return $this->generate(__FUNCTION__, func_get_args()); }
     public function file() { return $this->generate(__FUNCTION__, func_get_args()); }
     public function checkbox() { return $this->generate(__FUNCTION__, func_get_args()); }
+    public function textarea() { return $this->generate(__FUNCTION__, func_get_args()); }
+    public function radio() { return $this->generate(__FUNCTION__, func_get_args()); }
+    public function select() { return $this->generate(__FUNCTION__, func_get_args()); }
 
 }

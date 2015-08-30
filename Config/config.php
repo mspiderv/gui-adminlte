@@ -83,6 +83,7 @@ return [
     'box' => [
         'solid' => false,
         'collapsible' => true,
+        'headerBorders' => true,
     ],
 
     /*
@@ -193,5 +194,30 @@ return [
         'warning' => 'fa fa-warning',
 
     ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | iCheck Apperance Config
+    |--------------------------------------------------------------------------
+    |
+    | "folder" property is folder name with iCheck skin.
+    | "file" property is name of css file with iCheck skin.
+    | "class" property is class, which will be associated to checkbox / radio.
+    |
+    | Supported styles, colors and classes: http://fronteed.com/iCheck/
+    |
+    */
+    'icheck' => [
+        'checkbox' => [
+            'folder' => 'square',
+            'file' => 'blue',
+            'class' => 'square-blue',
+        ],
+        'radio' => [
+            'folder' => 'square',
+            'file' => 'blue',
+            'class' => 'square-blue',
+        ],
+    ]
 
 ];

@@ -37,7 +37,9 @@ class GUIAdminLTEServiceProvider extends ImplementationServiceProvider
         'Login',
         'Password',
         'ProgressBar',
+        'Radio',
         'Row',
+        'Select',
         'Submit',
         'Tab',
         'Table',
@@ -45,6 +47,7 @@ class GUIAdminLTEServiceProvider extends ImplementationServiceProvider
         'Tabs',
         'Tag',
         'TagContainer',
+        'Textarea',
         'Window',
     ];
 

@@ -14,7 +14,8 @@ class Submit extends AbstractButton implements SubmitContract {
         $this->set('dropdown', $dropdown);
         $this->set('size', $size);
 
-    	$this->setAttributes($attributes);
+        $this->setAttributes($attributes);
+    	$this->attr('type', 'submit');
     }
 
 }

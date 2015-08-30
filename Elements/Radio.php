@@ -2,19 +2,19 @@
 
 namespace Vitlabs\GUIAdminLTE\Elements;
 
-use Vitlabs\GUIAdmin\Contracts\Elements\CheckboxContract;
+use Vitlabs\GUIAdmin\Contracts\Elements\RadioContract;
 
-class Checkbox extends FormElement implements CheckboxContract {
+class Radio extends FormElement implements RadioContract {
 
     /**
      * Main element wrap class
      * @var string
      */
-    protected $mainWrapClass = 'checkbox';
+    protected $mainWrapClass = 'radio';
 
     public function needResources()
     {
-        $cfg = config('gui-adminlte.icheck.checkbox');
+        $cfg = config('gui-adminlte.icheck.radio');
 
         return [
             'css' => [
@@ -24,7 +24,7 @@ class Checkbox extends FormElement implements CheckboxContract {
                 'AdminLTE-2.2.0/plugins/iCheck/icheck.min.js',
             ],
             'config' => [
-                'gui-adminlte.icheck.checkbox'
+                'gui-adminlte.icheck.radio'
             ]
         ];
     }
@@ -89,9 +89,9 @@ class Checkbox extends FormElement implements CheckboxContract {
         $attributes = $this->getAttributes();
 
         $attributes['name'] = $this->get('name');
-        $attributes['type'] = 'checkbox';
+        $attributes['type'] = 'radio';
 
-        // Is checkbox checked ?
+        // Is radio checked ?
         if ($this->get('value'))
         {
             $attributes['checked'] = 'checked';

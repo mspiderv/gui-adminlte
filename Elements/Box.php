@@ -9,9 +9,7 @@ use Vitlabs\GUICore\Traits\ContainerTrait;
 
 class Box extends Element implements BoxContract {
 
-	use AttributesTrait, ContainerTrait, DataTrait {
-        ContainerTrait::__call insteadof AttributesTrait, DataTrait;
-    }
+	use AttributesTrait, ContainerTrait, DataTrait;
 
 	public function __construct($title, $state = 'default', $icon = '')
 	{
@@ -46,6 +44,13 @@ class Box extends Element implements BoxContract {
 		}
 
 		$data['attrs'] = $this->parseAttributes(true, $attrs);
+
+        $data['headerClass'] = 'box-header';
+
+        if (config('gui-adminlte.box.headerBorders'))
+        {
+            $data['headerClass'] .= ' with-border';
+        }
 
 		return $this->renderView('box', $data);
 	}
