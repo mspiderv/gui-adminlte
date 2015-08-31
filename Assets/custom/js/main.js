@@ -17,4 +17,14 @@ function assetsLoaded()
 	{
 		$('select').css('width', '100%').select2();
 	}
+
+    /* CKEditor */
+    $('.' + window.cfg['gui-adminlte.editorClass']).each(function() {
+        $(this).ckeditor({
+
+            // Elfinder
+            filebrowserBrowseUrl: '/admin/elfinder/ckeditor',
+
+        });
+    });
 }
