@@ -24,7 +24,7 @@ class Window extends Element implements WindowContract
 			'css' => [
 
 				// Bootstrap
-				'AdminLTE-2.2.0/bootstrap/css/bootstrap.min.css',
+				'~AdminLTE-2.2.0/bootstrap/css/bootstrap.min.css',
 
 				// Font Awesome Icons
 				'https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css',
@@ -33,42 +33,42 @@ class Window extends Element implements WindowContract
 				'https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css',
 
 				// Theme style
-				'AdminLTE-2.2.0/dist/css/AdminLTE.min.css',
+				'~AdminLTE-2.2.0/dist/css/AdminLTE.min.css',
 
 				// AdminLTE Skins
-				'AdminLTE-2.2.0/dist/css/skins/_all-skins.min.css',
+				'~AdminLTE-2.2.0/dist/css/skins/_all-skins.min.css',
 
                 // PNofity
-                'pnotify/pnotify.custom.min.css',
+                '~pnotify/pnotify.custom.min.css',
 
 			    // Custom styles
-			    'custom/css/style.css',
+			    '~custom/css/style.css',
 
 			],
 
 			'js' => [
 
 				// jQuery
-				'AdminLTE-2.2.0/plugins/jQuery/jQuery-2.1.4.min.js',
+				'~AdminLTE-2.2.0/plugins/jQuery/jQuery-2.1.4.min.js',
 
 				// Bootstrap JS
-				'AdminLTE-2.2.0/bootstrap/js/bootstrap.min.js',
+				'~AdminLTE-2.2.0/bootstrap/js/bootstrap.min.js',
 
 				// SlimScroll
-				'AdminLTE-2.2.0/plugins/slimScroll/jquery.slimscroll.min.js',
+				'~AdminLTE-2.2.0/plugins/slimScroll/jquery.slimscroll.min.js',
 
 				// FastClick
-				'AdminLTE-2.2.0/plugins/fastclick/fastclick.min.js',
+				'~AdminLTE-2.2.0/plugins/fastclick/fastclick.min.js',
 
 				// AdminLTE App
-				'AdminLTE-2.2.0/dist/js/app.min.js',
+				'~AdminLTE-2.2.0/dist/js/app.min.js',
 
                 // PNofity
-                'pnotify/pnotify.custom.min.js',
-                'pnotify/loader.js',
+                '~pnotify/pnotify.custom.min.js',
+                '~pnotify/loader.js',
 
 			    // Custom
-			    'custom/js/main.js',
+			    '~custom/js/main.js',
 
 			],
 
@@ -96,17 +96,17 @@ class Window extends Element implements WindowContract
 		$data['content'] = $this->renderElements($this->getPositionElements());
 		$data['footer'] = $this->renderElements($this->getPositionElements('footer'));
 
-		$data['skin'] = config('gui-adminlte.skin');
-		$data['layout'] = config('gui-adminlte.layout');
-		$data['sidebarCollapsed'] = config('gui-adminlte.sidebarCollapsed');
-		$data['favicon'] = config('gui-adminlte.favicon');
-		$data['searchName'] = config('gui-adminlte.search.name');
-		$data['searchMethod'] = config('gui-adminlte.search.method');
-		$data['searchAction'] = config('gui-adminlte.search.action');
+		$data['skin'] = $this->config('skin');
+		$data['layout'] = $this->config('layout');
+		$data['sidebarCollapsed'] = $this->config('sidebarCollapsed');
+		$data['favicon'] = $this->config('favicon');
+		$data['searchName'] = $this->config('search.name');
+		$data['searchMethod'] = $this->config('search.method');
+		$data['searchAction'] = $this->config('search.action');
 
-        $data['searchPlaceholder'] = trans('gui-adminlte::window.searchPlaceholder');
-        $data['showWeb'] = trans('gui-adminlte::window.showWeb');
-        $data['logout'] = trans('gui-adminlte::window.logout');
+        $data['searchPlaceholder'] = $this->trans('window.searchPlaceholder');
+        $data['showWeb'] = $this->trans('window.showWeb');
+        $data['logout'] = $this->trans('window.logout');
 
         // Menus
         $data['sidebarMenu'] = $this->getSidebarMenuPresenter()->present($this->getMenu('sidebar'));

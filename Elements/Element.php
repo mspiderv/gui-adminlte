@@ -8,6 +8,11 @@ abstract class Element {
 
     use ElementTrait;
 
+    public function getPackageName()
+    {
+        return 'gui-adminlte';
+    }
+
     public function getViewsFolder()
     {
         return 'elements';

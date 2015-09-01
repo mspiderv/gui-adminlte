@@ -41,27 +41,36 @@ class GUIAdminLTEElementsServiceProvider extends ImplementationServiceProvider
         'Window',
     ];
 
-    protected function getViewPath()
+    protected function getPackageName()
     {
-        return __DIR__ . '/../Resources/views/';
+        return 'gui-adminlte';
     }
 
-    protected function getAssetsPath()
-    {
-        return __DIR__ . '/../Assets/';
-    }
-
-    protected function publishConfig()
+    protected function translationDirs()
     {
         return [
-            __DIR__ . '/../Config/config.php' => 'gui-adminlte'
+            __DIR__ . '/../Resources/lang/'
         ];
     }
 
-    protected function loadTranslations()
+    protected function assetDirs()
     {
         return [
-            __DIR__ . '/../Resources/lang' => 'gui-adminlte'
+            __DIR__ . '/../Assets/'
+        ];
+    }
+
+    protected function configFiles()
+    {
+        return [
+            __DIR__ . '/../Config/' . $this->getPackageName() . '.php'
+        ];
+    }
+
+    protected function viewDirs()
+    {
+        return [
+            __DIR__ . '/../Resources/views/'
         ];
     }
 

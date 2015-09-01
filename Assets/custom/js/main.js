@@ -3,8 +3,8 @@ function assetsLoaded()
 	/* iCheck */
 	if ($(':radio, :checkbox').length > 0)
 	{
-		var checkboxCfg = window.cfg['gui-adminlte.icheck.checkbox'];
-		var radioCfg = window.cfg['gui-adminlte.icheck.radio'];
+		var checkboxCfg = cfg['checkbox'];
+        var radioCfg = cfg['radio'];
 
 		$('input').iCheck({
 	        checkboxClass: 'icheckbox_' + checkboxCfg.class,
@@ -17,14 +17,4 @@ function assetsLoaded()
 	{
 		$('select').css('width', '100%').select2();
 	}
-
-    /* CKEditor */
-    $('.' + window.cfg['gui-adminlte.editorClass']).each(function() {
-        $(this).ckeditor({
-
-            // Elfinder
-            filebrowserBrowseUrl: '/admin/elfinder/ckeditor',
-
-        });
-    });
 }

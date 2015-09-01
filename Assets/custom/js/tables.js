@@ -18,7 +18,7 @@ $(function() {
     datatable.saveSort = function(model, oldIDs, newIDs)
     {
         $.ajax({
-            url: cfg['gui-adminlte.table.sortURL'],
+            url: cfg['table.sortURL'],
             dataType: 'json',
             method: 'post',
             data:

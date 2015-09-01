@@ -14,17 +14,17 @@ class Checkbox extends FormElement implements CheckboxContract {
 
     public function needResources()
     {
-        $cfg = config('gui-adminlte.icheck.checkbox');
+        $cfg = $this->config('icheck.checkbox');
 
         return [
             'css' => [
-                'AdminLTE-2.2.0/plugins/iCheck/' . $cfg['folder'] . '/' . $cfg['file'] . '.css',
+                '~AdminLTE-2.2.0/plugins/iCheck/' . $cfg['folder'] . '/' . $cfg['file'] . '.css',
             ],
             'js' => [
-                'AdminLTE-2.2.0/plugins/iCheck/icheck.min.js',
+                '~AdminLTE-2.2.0/plugins/iCheck/icheck.min.js',
             ],
             'config' => [
-                'gui-adminlte.icheck.checkbox'
+                'gui-adminlte.icheck.checkbox' => 'checkbox'
             ]
         ];
     }

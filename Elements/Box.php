@@ -27,12 +27,12 @@ class Box extends Element implements BoxContract {
 		$data['body'] = $this->renderElements($this->getPositionElements('body'));
 		$data['footer'] = $this->renderElements($this->getPositionElements('footer'));
 
-		$data['collapsible'] = config('gui-adminlte.box.collapsible');
+		$data['collapsible'] = $this->config('box.collapsible');
 
 		$attrs = $this->getAttributes();
 
 		// Solid ?
-		if (config('gui-adminlte.box.solid'))
+		if ($this->config('box.solid'))
 		{
             $this->addClass('box-solid', $attrs);
 		}
@@ -47,7 +47,7 @@ class Box extends Element implements BoxContract {
 
         $data['headerClass'] = 'box-header';
 
-        if (config('gui-adminlte.box.headerBorders'))
+        if ($this->config('box.headerBorders'))
         {
             $data['headerClass'] .= ' with-border';
         }

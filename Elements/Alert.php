@@ -2,7 +2,6 @@
 
 namespace Vitlabs\GUIAdminLTE\Elements;
 
-use Config;
 use Vitlabs\GUIAdmin\Contracts\Elements\AlertContract;
 use Vitlabs\GUICore\Traits\AttributesTrait;
 use Vitlabs\GUICore\Traits\DataTrait;
@@ -14,11 +13,9 @@ class Alert extends Element implements AlertContract {
     public function __construct($content, $state = 'warning', $description = null, $icon = null, $dismissable = true)
     {
         // Set default icon
-        $configKey = 'gui-adminlte.alertIcon.' . $state;
-
         if ($icon == null)
         {
-            $icon = (Config::has($configKey)) ? config($configKey) : config('gui-adminlte.alertIcon.default');
+            $icon = $this->config('alertIcon.' . $state, 'alertIcon.default');
         }
 
         // Set data variables

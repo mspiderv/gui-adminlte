@@ -1,6 +1,6 @@
 {
     "name": "vitlabs/gui-adminlte",
-    "description": "",
+    "description": "Implementations for administration GUI generation.",
     "authors": [
 		{
 			"name": "Matej Vitaz",

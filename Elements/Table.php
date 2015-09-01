@@ -19,7 +19,7 @@ class Table extends Element implements TableContract {
     {
         $this->addClass('table table-bordered table-hover datatable');
         $this->setDefault('sortable', false);
-        $this->setAttribute('data-paging', config('gui-adminlte.table.paging'));
+        $this->setAttribute('data-paging', $this->config('table.paging'));
     }
 
     public function needResources()
@@ -29,29 +29,29 @@ class Table extends Element implements TableContract {
             'css' => [
 
                 // DATA TABLES
-                'AdminLTE-2.2.0/plugins/datatables/dataTables.bootstrap.css',
+                '~AdminLTE-2.2.0/plugins/datatables/dataTables.bootstrap.css',
 
                 // Custom styles
-                'custom/css/tables.css',
+                '~custom/css/tables.css',
 
             ],
 
             'js' => [
 
                 // Custom JS
-                'custom/js/tables.js',
+                '~custom/js/tables.js',
 
                 // DATA TABES SCRIPT
-                'AdminLTE-2.2.0/plugins/datatables/jquery.dataTables.min.js',
-                'AdminLTE-2.2.0/plugins/datatables/dataTables.bootstrap.min.js',
+                '~AdminLTE-2.2.0/plugins/datatables/jquery.dataTables.min.js',
+                '~AdminLTE-2.2.0/plugins/datatables/dataTables.bootstrap.min.js',
 
                 // Custom JS
-                'custom/js/jquery-ui-sortable.min.js',
+                '~custom/js/jquery-ui-sortable.min.js',
 
             ],
 
             'config' => [
-                'gui-adminlte.table.sortURL'
+                'gui-adminlte.table.sortURL' => 'table.sortURL'
             ],
 
         ];

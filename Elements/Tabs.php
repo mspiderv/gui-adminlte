@@ -27,7 +27,7 @@ class Tabs extends Element implements TabsContract {
 
 		$data['tabs'] = $this->getPositionElements('tabs');
         $data['tools'] = $this->renderElements($this->getPositionElements('tools'));
-        $data['pullRight'] = config('gui-adminlte.tabsPullRight');
+        $data['pullRight'] = $this->config('tabsPullRight');
         $data['attrs'] = $this->parseAttributes();
 
 		if ($data['pullRight'])

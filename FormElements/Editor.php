@@ -2,32 +2,31 @@
 
 namespace Vitlabs\GUIAdminLTE\FormElements;
 
+use Exception;
 use Vitlabs\GUIAdmin\Contracts\FormElements\EditorContract;
-use Vitlabs\GUICore\Traits\PlaceholderTrait;
 
 class Editor extends FormElement implements EditorContract {
 
-    use PlaceholderTrait;
+    protected $implementation = null;
+    protected $editor = null;
 
-    public function __construct()
+    public function __construct($implementation = null)
     {
-        $this->addClass(config('gui-adminlte.editorClass'));
-        $this->setAttribute('type', 'text');
-        $this->setAttribute('rows', '3');
+        $this->implementation = ($implementation == null) ? $this->config('editorImplementation') : $implementation;
     }
 
-    public function needResources()
+    public function postConstruct()
     {
-        return [
-            'js' => [
-                'ckeditor/ckeditor.js',
-                'ckeditor/adapters/jquery.js',
-            ],
-            'config' => [
-                'gui-adminlte.editorClass',
-            ],
-        ];
+        try {
+            $this->editor = $this->getGenerator()->generate($this->implementation);
+        }
+        catch(Exception $e)
+        {
+            throw new Exception("Editor implementation [$this->implementation] could not be generated.", 0, $e);
+        }
     }
+
+    /* "Redirect" FieldContract's methods to editor object */
 
     /**
      * Get HTML of the rendered field.
@@ -35,11 +34,64 @@ class Editor extends FormElement implements EditorContract {
      */
     public function renderField()
     {
-        $attributes = $this->getAttributes();
+        return $this->editor->renderField();
+    }
 
-        $attributes['name'] = $this->get('name');
+    /**
+     * Get/set element name.
+     * @param  string $name
+     * @return value/$this
+     */
+    public function name($name)
+    {
+        return $this->editor->name($name);
+    }
 
-        return $this->getGenerator()->tag('textarea', $this->getEscapedValue(), true, $attributes)->render();
+    /**
+     * Get/set element value.
+     * @param  string $value
+     * @return value/$this
+     */
+    public function value($value)
+    {
+        return $this->editor->value($name);
+    }
+
+    /**
+     * Get escaped current element value by htmlspecialchars PHP function.
+     * @return string
+     */
+    public function getEscapedValue()
+    {
+        return $this->editor->getEscapedValue();
+    }
+
+    /**
+     * Is element disabled/Enable/Disable element.
+     * @param  boolean $disabled
+     * @return boolean/$this
+     */
+    public function disabled($disabled = null)
+    {
+        return $this->editor->disabled($disabled);
+    }
+
+    /**
+     * Disable the element.
+     * @return $this
+     */
+    public function disable()
+    {
+        return $this->editor->disable();
+    }
+
+    /**
+     * Enable the element.
+     * @return $this
+     */
+    public function enable()
+    {
+        return $this->editor->enable();
     }
 
 }

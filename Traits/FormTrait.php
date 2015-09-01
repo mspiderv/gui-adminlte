@@ -12,7 +12,7 @@ trait FormTrait {
     public function file() { return $this->generate(__FUNCTION__, func_get_args()); }
     public function checkbox() { return $this->generate(__FUNCTION__, func_get_args()); }
     public function textarea() { return $this->generate(__FUNCTION__, func_get_args()); }
-    public function editor() { return $this->generate(__FUNCTION__, func_get_args()); }
+    public function editor($implementation = null) { return $this->generate(__FUNCTION__, func_get_args()); }
     public function radio() { return $this->generate(__FUNCTION__, func_get_args()); }
     public function select() { return $this->generate(__FUNCTION__, func_get_args()); }
 

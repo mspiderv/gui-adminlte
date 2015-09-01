@@ -66,13 +66,13 @@ class TableRow extends Element implements TableRowContract {
             // Add level HTML
             for ($i = intval($this->level()); $i > 0; $i--)
             {
-                $data['cells'][0] = config('gui-adminlte.table.rowLevel') . $data['cells'][0];
+                $data['cells'][0] = $this->config('table.rowLevel') . $data['cells'][0];
             }
 
             // Add handle HTML
             if ($this->table->sortable() == false && $this->sortgroup() != null && $this->model() != null)
             {
-                $data['cells'][0] = config('gui-adminlte.table.rowHandle') . $data['cells'][0];
+                $data['cells'][0] = $this->config('table.rowHandle') . $data['cells'][0];
             }
         }
 

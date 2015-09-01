@@ -132,6 +132,7 @@
     <!-- REQUIRED JS SCRIPTS -->
 
     {!! $resourceBag->getParsedConfig() !!}
+    {!! $resourceBag->getParsedVariables() !!}
 
     {!! $resourceBag->getParsedJS() !!}
 

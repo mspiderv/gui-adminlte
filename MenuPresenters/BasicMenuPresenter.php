@@ -3,13 +3,12 @@
 namespace Vitlabs\GUIAdminLTE\MenuPresenters;
 
 use Exception;
-use Vitlabs\GUICore\Menu\AbstractMenuPresenter;
 use Vitlabs\GUICore\Contracts\Menu\DividerContract;
 use Vitlabs\GUICore\Contracts\Menu\HeadingContract;
 use Vitlabs\GUICore\Contracts\Menu\LinkContract;
 use Vitlabs\GUICore\Contracts\Menu\MenuContract;
 
-class BasicMenuPresenter extends AbstractMenuPresenter
+class BasicMenuPresenter extends MenuPresenter
 {
     // Views
     protected $viewsPrefix = 'menus.basic.';
@@ -34,6 +33,11 @@ class BasicMenuPresenter extends AbstractMenuPresenter
     protected $linkTitlePrefixWithSubmenu = '';
     protected $linkTitleSuffix = '';
     protected $linkTitleSuffixWithSubmenu = '';
+
+    public function getPackageName()
+    {
+        return 'gui-adminlte';
+    }
 
     protected function openWrap(MenuContract $menu)
     {

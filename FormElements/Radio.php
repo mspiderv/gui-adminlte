@@ -14,17 +14,17 @@ class Radio extends FormElement implements RadioContract {
 
     public function needResources()
     {
-        $cfg = config('gui-adminlte.icheck.radio');
+        $cfg = $this->config('icheck.radio');
 
         return [
             'css' => [
-                'AdminLTE-2.2.0/plugins/iCheck/' . $cfg['folder'] . '/' . $cfg['file'] . '.css',
+                '~AdminLTE-2.2.0/plugins/iCheck/' . $cfg['folder'] . '/' . $cfg['file'] . '.css',
             ],
             'js' => [
-                'AdminLTE-2.2.0/plugins/iCheck/icheck.min.js',
+                '~AdminLTE-2.2.0/plugins/iCheck/icheck.min.js',
             ],
             'config' => [
-                'gui-adminlte.icheck.radio'
+                'gui-adminlte.icheck.radio' => 'radio'
             ]
         ];
     }

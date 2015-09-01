@@ -3,13 +3,12 @@
 namespace Vitlabs\GUIAdminLTE\MenuPresenters;
 
 use Exception;
-use Vitlabs\GUICore\Menu\AbstractMenuPresenter;
 use Vitlabs\GUICore\Contracts\Menu\DividerContract;
 use Vitlabs\GUICore\Contracts\Menu\HeadingContract;
 use Vitlabs\GUICore\Contracts\Menu\LinkContract;
 use Vitlabs\GUICore\Contracts\Menu\MenuContract;
 
-class BootstrapDropdownMenuPresenter extends AbstractMenuPresenter
+class BootstrapDropdownMenuPresenter extends MenuPresenter
 {
     // Views
     protected $viewsPrefix = 'menus.bootstrap.dropdown.';

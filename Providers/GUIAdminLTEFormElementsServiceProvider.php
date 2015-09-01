@@ -24,14 +24,23 @@ class GUIAdminLTEFormElementsServiceProvider extends ImplementationServiceProvid
         'Textarea',
     ];
 
-    protected function getViewPath()
+    protected function getPackageName()
     {
-        return __DIR__ . '/../Resources/views/';
+        return 'gui-adminlte';
     }
 
-    protected function getAssetsPath()
+    protected function assetDirs()
     {
-        return __DIR__ . '/../Assets/';
+        return [
+            __DIR__ . '/../Assets/'
+        ];
+    }
+
+    protected function viewDirs()
+    {
+        return [
+            __DIR__ . '/../Resources/views/'
+        ];
     }
 
 }

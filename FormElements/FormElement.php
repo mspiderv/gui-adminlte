@@ -4,25 +4,21 @@ namespace Vitlabs\GUIAdminLTE\FormElements;
 
 use Vitlabs\GUIAdminLTE\Elements\Element;
 use Vitlabs\GUIAdmin\Contracts\FormElements\FormElementContract;
-use Vitlabs\GUICore\Traits\DataTrait;
 use Vitlabs\GUICore\Traits\AttributesTrait;
+use Vitlabs\GUICore\Traits\DataTrait;
+use Vitlabs\GUICore\Traits\FieldTrait;
 
 abstract class FormElement extends Element implements FormElementContract {
 
-    use AttributesTrait, DataTrait;
+    use AttributesTrait, DataTrait, FieldTrait {
+        FieldTrait::__construct insteadof AttributesTrait, DataTrait;
+    }
 
     /**
      * Main element wrap class
      * @var string
      */
     protected $mainWrapClass = 'form-group';
-
-    /**
-     * Form elements should not have construct method.
-     */
-    public function __construct()
-    {
-    }
 
     /**
      * Get/set element label.
@@ -35,77 +31,6 @@ abstract class FormElement extends Element implements FormElementContract {
     }
 
     /**
-     * Get/set element name.
-     * @param  string $name
-     * @return value/$this
-     */
-    public function name($name)
-    {
-        return $this->getOrSet('name', $name);
-    }
-
-    /**
-     * Get/set element value.
-     * @param  string $value
-     * @return value/$this
-     */
-    public function value($value)
-    {
-        return $this->getOrSet('value', $value);
-    }
-
-    /**
-     * Get escaped current element value by htmlspecialchars PHP function.
-     * @return string
-     */
-    public function getEscapedValue()
-    {
-        return htmlspecialchars($this->get('value'));
-    }
-
-    /**
-     * Is element disabled/Enable/Disable element.
-     * @param  boolean $disabled
-     * @return boolean/$this
-     */
-    public function disabled($disabled = null)
-    {
-        if ($disabled == null)
-        {
-            return $this->hasAttribute('disabled');
-        }
-
-        else
-        {
-            $disabled ? $this->setAttribute('disabled', 'disabled') : $this->removeAttribute('disabled');
-
-            return $this;
-        }
-    }
-
-    /**
-     * Disable the element.
-     * @return $this
-     */
-    public function disable()
-    {
-        $this->setAttribute('disabled', 'disabled');
-
-        return $this;
-    }
-
-    /**
-     * Enable the element.
-     * @return $this
-     */
-    public function enable()
-    {
-        $this->removeAttribute('disabled');
-
-        return $this;
-    }
-
-    /**
      * Get/set element help.
      * @param  string $help
      * @return value/$this
@@ -113,16 +38,6 @@ abstract class FormElement extends Element implements FormElementContract {
     public function help($help)
     {
         return $this->getOrSet('help', $help);
-    }
-
-    /**
-     * Get/set element id.
-     * @param  string $id
-     * @return value/$this
-     */
-    public function id($id)
-    {
-        return $this->getOrSetAttribute('id', $id);
     }
 
     /**
