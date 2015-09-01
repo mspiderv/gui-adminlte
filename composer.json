@@ -8,12 +8,12 @@
 		}
 	],
     "require": {
-        "vitlabs/gui-core": "*",
-        "vitlabs/gui-admin": "*"
+        "vitlabs/gui-core": "@dev",
+        "vitlabs/gui-admin": "@dev"
     },
     "autoload": {
         "psr-4": {
             "Vitlabs\\GUIAdminLTE\\": ""
         }
     }
-}
+}banner1
