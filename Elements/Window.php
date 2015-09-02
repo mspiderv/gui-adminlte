@@ -24,7 +24,7 @@ class Window extends Element implements WindowContract
 			'css' => [
 
 				// Bootstrap
-				'~AdminLTE-2.2.0/bootstrap/css/bootstrap.min.css',
+				'~adminlte/bootstrap/css/bootstrap.min.css',
 
 				// Font Awesome Icons
 				'https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css',
@@ -33,10 +33,10 @@ class Window extends Element implements WindowContract
 				'https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css',
 
 				// Theme style
-				'~AdminLTE-2.2.0/dist/css/AdminLTE.min.css',
+				'~adminlte/dist/css/AdminLTE.min.css',
 
 				// AdminLTE Skins
-				'~AdminLTE-2.2.0/dist/css/skins/_all-skins.min.css',
+				'~adminlte/dist/css/skins/_all-skins.min.css',
 
                 // PNofity
                 '~pnotify/pnotify.custom.min.css',
@@ -49,19 +49,19 @@ class Window extends Element implements WindowContract
 			'js' => [
 
 				// jQuery
-				'~AdminLTE-2.2.0/plugins/jQuery/jQuery-2.1.4.min.js',
+				'~adminlte/plugins/jQuery/jQuery-2.1.4.min.js',
 
 				// Bootstrap JS
-				'~AdminLTE-2.2.0/bootstrap/js/bootstrap.min.js',
+				'~adminlte/bootstrap/js/bootstrap.min.js',
 
 				// SlimScroll
-				'~AdminLTE-2.2.0/plugins/slimScroll/jquery.slimscroll.min.js',
+				'~adminlte/plugins/slimScroll/jquery.slimscroll.min.js',
 
 				// FastClick
-				'~AdminLTE-2.2.0/plugins/fastclick/fastclick.min.js',
+				'~adminlte/plugins/fastclick/fastclick.min.js',
 
 				// AdminLTE App
-				'~AdminLTE-2.2.0/dist/js/app.min.js',
+				'~adminlte/dist/js/app.min.js',
 
                 // PNofity
                 '~pnotify/pnotify.custom.min.js',

@@ -29,7 +29,7 @@ class Table extends Element implements TableContract {
             'css' => [
 
                 // DATA TABLES
-                '~AdminLTE-2.2.0/plugins/datatables/dataTables.bootstrap.css',
+                '~adminlte/plugins/datatables/dataTables.bootstrap.css',
 
                 // Custom styles
                 '~custom/css/tables.css',
@@ -42,8 +42,8 @@ class Table extends Element implements TableContract {
                 '~custom/js/tables.js',
 
                 // DATA TABES SCRIPT
-                '~AdminLTE-2.2.0/plugins/datatables/jquery.dataTables.min.js',
-                '~AdminLTE-2.2.0/plugins/datatables/dataTables.bootstrap.min.js',
+                '~adminlte/plugins/datatables/jquery.dataTables.min.js',
+                '~adminlte/plugins/datatables/dataTables.bootstrap.min.js',
 
                 // Custom JS
                 '~custom/js/jquery-ui-sortable.min.js',

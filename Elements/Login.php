@@ -16,13 +16,13 @@ class Login extends Element implements LoginContract {
 			'css' => [
 
 				// Bootstrap
-				'~AdminLTE-2.2.0/bootstrap/css/bootstrap.min.css',
+				'~adminlte/bootstrap/css/bootstrap.min.css',
 
 				// Font Awesome Icons
 				'https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css',
 
 				// Theme style
-				'~AdminLTE-2.2.0/dist/css/AdminLTE.min.css',
+				'~adminlte/dist/css/AdminLTE.min.css',
 
 				// Custom styles
 			    '~custom/css/style.css',
@@ -32,10 +32,10 @@ class Login extends Element implements LoginContract {
 			'js' => [
 
 				// jQuery
-				'~AdminLTE-2.2.0/plugins/jQuery/jQuery-2.1.4.min.js',
+				'~adminlte/plugins/jQuery/jQuery-2.1.4.min.js',
 
 				// Bootstrap JS
-				'~AdminLTE-2.2.0/bootstrap/js/bootstrap.min.js',
+				'~adminlte/bootstrap/js/bootstrap.min.js',
 
 			    // Custom
 			    '~custom/js/main.js',

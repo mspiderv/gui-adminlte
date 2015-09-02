@@ -18,10 +18,10 @@ class Checkbox extends FormElement implements CheckboxContract {
 
         return [
             'css' => [
-                '~AdminLTE-2.2.0/plugins/iCheck/' . $cfg['folder'] . '/' . $cfg['file'] . '.css',
+                '~adminlte/plugins/iCheck/' . $cfg['folder'] . '/' . $cfg['file'] . '.css',
             ],
             'js' => [
-                '~AdminLTE-2.2.0/plugins/iCheck/icheck.min.js',
+                '~adminlte/plugins/iCheck/icheck.min.js',
             ],
             'config' => [
                 'gui-adminlte.icheck.checkbox' => 'checkbox'

@@ -9,7 +9,8 @@
 	],
     "require": {
         "vitlabs/gui-core": "@dev",
-        "vitlabs/gui-admin": "@dev"
+        "vitlabs/gui-admin": "@dev",
+        "almasaeed2010/adminlte": "2.*"
     },
     "autoload": {
         "psr-4": {

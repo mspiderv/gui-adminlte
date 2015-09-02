@@ -56,7 +56,8 @@ class GUIAdminLTEElementsServiceProvider extends ImplementationServiceProvider
     protected function assetDirs()
     {
         return [
-            __DIR__ . '/../Assets/'
+            __DIR__ . '/../Assets/',
+            base_path('vendor/almasaeed2010/adminlte') => 'adminlte'
         ];
     }
 

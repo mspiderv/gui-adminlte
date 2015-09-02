@@ -20,10 +20,10 @@ class Select extends FormElement implements SelectContract {
     {
         return [
             'css-before' => [
-                '~AdminLTE-2.2.0/plugins/select2/select2.min.css',
+                '~adminlte/plugins/select2/select2.min.css',
             ],
             'js' => [
-                '~AdminLTE-2.2.0/plugins/select2/select2.full.min.js',
+                '~adminlte/plugins/select2/select2.full.min.js',
             ],
         ];
     }
