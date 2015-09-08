@@ -17,8 +17,9 @@ class Table extends Element implements TableContract {
 
     public function __construct()
     {
-        $this->addClass('table table-bordered table-hover datatable');
+        $this->addClass('table table-bordered table-hover');
         $this->setDefault('sortable', false);
+        $this->setDefault('datatable', true);
         $this->setAttribute('data-paging', $this->config('table.paging'));
     }
 
@@ -60,6 +61,11 @@ class Table extends Element implements TableContract {
     public function sortable($sortable = null)
     {
         return $this->getOrSet('sortable', $sortable);
+    }
+
+    public function datatable($datatable = null)
+    {
+        return $this->getOrSet('datatable', $datatable);
     }
 
     public function paging($paging = null)
@@ -163,12 +169,19 @@ class Table extends Element implements TableContract {
 
     public function render()
     {
-        if ($this->get('sortable'))
+        // Datatable classes
+        if ($this->get('datatable'))
         {
-            $this->addClass('datatable-sorting');
+            $this->addClass('datatable');
+
+            if ($this->get('sortable'))
+            {
+                $this->addClass('datatable-sorting');
+            }
         }
         else
         {
+            $this->removeClass('datatable');
             $this->removeClass('datatable-sorting');
         }
 
