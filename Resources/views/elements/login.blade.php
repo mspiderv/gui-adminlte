@@ -25,11 +25,9 @@
                     {!! $logo !!}
                 </div>
                 <p class="login-box-msg">{!! $heading !!}</p>
-                @if ($showError)
-                <p class="text-center text-danger">
-                    <strong>{!! $errorMessage !!}</strong>
-                </p>
-                @endif
+                @foreach ($errors->all() as $error)
+                <p class="text-center text-danger"><strong>{{ $error }}</strong></p>
+                @endforeach
                 {!! Form::open($form) !!}
                     <div class="form-group has-feedback{!! $showError ? ' has-error' : '' !!}">
                         <input name="{!! $fieldLoginName !!}" type="text" class="form-control" placeholder="{!! $fieldLoginPlaceholder !!}" />

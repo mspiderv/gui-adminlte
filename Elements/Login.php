@@ -58,11 +58,9 @@ class Login extends Element implements LoginContract {
 		]);
 
 		$this->setDefault('form', []);
-		$this->setDefault('showError', false);
 
 		$data = $this->getData();
 
-		$data['errorMessage'] = $this->trans('login.errorMessage');
 		$data['showWeb'] = $this->trans('login.showWeb');
 		$data['login'] = $this->trans('login.login');
 		$data['fieldLoginPlaceholder'] = $this->trans('login.fieldLogin');

@@ -116,6 +116,19 @@
 
             <!-- Main content -->
             <section class="content">
+
+                @if (count($errors) > 0)
+                <div class="alert alert-warning">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <h4>Počas spracovávania požiadavky došlo k nasledujúcim chybám:</h4>
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+                @endif
+
                 {!! $content !!}
             </section><!-- /.content -->
         </div><!-- /.content-wrapper -->
