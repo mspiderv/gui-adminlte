@@ -73,16 +73,11 @@ abstract class AbstractButton extends Element {
             $this->addClass('btn-' . $this->get('size'), $attrs);
         }
 
-        // Dropdown class
+        // Dropdown class and data attribute
         if ($this->get('dropdown'))
         {
             $this->addClass('dropdown-toggle', $attrs);
-        }
-
-        // Dropdown data attribute
-        if ($this->get('dropdown'))
-        {
-            $this->attr('data-toggle', 'dropdown');
+            $this->attr('data-toggle', 'dropdown', $attrs);
         }
 
         // Get data

@@ -40,7 +40,7 @@
                     @if ($webURL != '')
                     <a href="{!! $webURL !!}" class="pull-left btn btn-default btn-flat">{!! $showWeb !!}</a>
                     @endif
-                    <button type="submit" class="pull-right btn btn-primary btn-flat">{!! $login !!}</button>
+                    <button type="submit" class="pull-right btn btn-{!! $loginButtonState !!} btn-flat">{!! $login !!}</button>
                 </form>
 
             </div><!-- /.login-box-body -->

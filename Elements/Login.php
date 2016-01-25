@@ -65,7 +65,8 @@ class Login extends Element implements LoginContract {
 		$data['login'] = $this->trans('login.login');
 		$data['fieldLoginPlaceholder'] = $this->trans('login.fieldLogin');
 		$data['fieldPasswordPlaceholder'] = $this->trans('login.fieldPassword');
-		$data['backgroundImage'] = $this->config('loginBackgroundImage');
+		$data['backgroundImage'] = $this->config('login.backgroundImage');
+		$data['loginButtonState'] = $this->config('login.loginButtonState');
 
 		return $this->renderView('login', $data);
 	}
