@@ -129,6 +129,8 @@
                 </div>
                 @endif
 
+                @include('flash::message')
+
                 {!! $content !!}
             </section><!-- /.content -->
         </div><!-- /.content-wrapper -->
@@ -161,6 +163,11 @@
             }
         });
     });
+    </script>
+
+    <!-- This is only necessary if you do Flash::overlay('...') -->
+    <script>
+        $('#flash-overlay-modal').modal();
     </script>
 
 </body>
