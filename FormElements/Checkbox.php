@@ -34,9 +34,9 @@ class Checkbox extends FormElement implements CheckboxContract {
      * @param  boolean $value
      * @return value/$this
      */
-    public function value($value)
+    public function value($value = null)
     {
-        if ($value == null)
+        if (is_null($value))
         {
             return $this->get('value');
         }
@@ -89,12 +89,17 @@ class Checkbox extends FormElement implements CheckboxContract {
         $attributes = $this->getAttributes();
 
         $attributes['name'] = $this->get('name');
+        $attributes['value'] = 1;
         $attributes['type'] = 'checkbox';
 
         // Is checkbox checked ?
         if ($this->get('value'))
         {
             $attributes['checked'] = 'checked';
+        }
+        else if (isset($attributes['checked']))
+        {
+            unset($attributes['checked']);
         }
 
         $field = $this->getGenerator()->tag('input', '', false, $attributes);

@@ -139,7 +139,7 @@ class Window extends Element implements WindowContract
 
     protected function getSidebarMenuPresenter()
     {
-        if ($this->sidebarMenuPresenter == null)
+        if (is_null($this->sidebarMenuPresenter))
         {
             /* Menu presenter */
             // Create menu presenter
@@ -173,7 +173,7 @@ class Window extends Element implements WindowContract
 
     protected function getNavbarMenuPresenter()
     {
-        if ($this->navbarMenuPresenter == null)
+        if (is_null($this->navbarMenuPresenter))
         {
             $this->navbarMenuPresenter = new BootstrapNavbarMenuPresenter;
         }

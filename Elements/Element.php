@@ -3,8 +3,9 @@
 namespace Vitlabs\GUIAdminLTE\Elements;
 
 use Vitlabs\GUICore\Traits\ElementTrait;
+use Vitlabs\GUICore\Contracts\Elements\ElementContract;
 
-abstract class Element {
+abstract class Element implements ElementContract {
 
     use ElementTrait;
 

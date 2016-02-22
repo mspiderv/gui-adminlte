@@ -11,7 +11,7 @@ class ButtonSocial extends AbstractButton implements ButtonSocialContract {
 
     public function __construct($social = '', $content = '', $icon = null)
     {
-        $iconElement = GUI::icon(($icon == null) ? 'fa fa-' . $social : $icon);
+        $iconElement = GUI::icon(is_null($icon) ? 'fa fa-' . $social : $icon);
 
         $this->set('content', $iconElement . $content);
         $this->set('state', '');

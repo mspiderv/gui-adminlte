@@ -13,7 +13,7 @@ class Alert extends Element implements AlertContract {
     public function __construct($content, $state = 'warning', $description = null, $icon = null, $dismissable = true)
     {
         // Set default icon
-        if ($icon == null)
+        if (is_null($icon))
         {
             $icon = $this->config('alertIcon.' . $state, 'alertIcon.default');
         }

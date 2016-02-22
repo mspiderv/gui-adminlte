@@ -64,9 +64,9 @@ class Select extends FormElement implements SelectContract {
      * @param  mix $value(s)
      * @return mix/$this
      */
-    public function value($value)
+    public function value($value = null)
     {
-        if ($value == null)
+        if (is_null($value))
         {
             return $this->get('value');
         }

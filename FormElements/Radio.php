@@ -34,9 +34,9 @@ class Radio extends FormElement implements RadioContract {
      * @param  boolean $value
      * @return value/$this
      */
-    public function value($value)
+    public function value($value = null)
     {
-        if ($value == null)
+        if (is_null($value))
         {
             return $this->get('value');
         }

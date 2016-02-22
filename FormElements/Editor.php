@@ -7,12 +7,16 @@ use Vitlabs\GUIAdmin\Contracts\FormElements\EditorContract;
 
 class Editor extends FormElement implements EditorContract {
 
+    /**
+     * Name of the editor's implementation GUI element.
+     * @var null
+     */
     protected $implementation = null;
     protected $editor = null;
 
     public function __construct($implementation = null)
     {
-        $this->implementation = ($implementation == null) ? $this->config('editorImplementation') : $implementation;
+        $this->implementation = is_null($implementation) ? $this->config('editorImplementation') : $implementation;
     }
 
     public function postConstruct()
@@ -26,7 +30,17 @@ class Editor extends FormElement implements EditorContract {
         }
     }
 
-    /* "Redirect" FieldContract's methods to editor object */
+    /**
+     * Call FieldContract's methods on the implementation class.
+     * @param  string $method
+     * @return mixed
+     */
+    protected function callImplementation($method)
+    {
+        $result = call_user_func_array([ $this->editor, $method ], func_get_args());
+        
+        return (is_object($result) && $result == $this->editor) ? $this : $result;
+    }
 
     /**
      * Get HTML of the rendered field.
@@ -34,27 +48,27 @@ class Editor extends FormElement implements EditorContract {
      */
     public function renderField()
     {
-        return $this->editor->renderField();
+        return $this->callImplementation(__FUNCTION__);
     }
 
     /**
-     * Get/set element name.
+     * Get/set editor's name.
      * @param  string $name
      * @return value/$this
      */
-    public function name($name)
+    public function name($name = null)
     {
-        return $this->editor->name($name);
+        return $this->callImplementation(__FUNCTION__, $name);
     }
 
     /**
-     * Get/set element value.
+     * Get/set editor's value.
      * @param  string $value
      * @return value/$this
      */
-    public function value($value)
+    public function value($value = null)
     {
-        return $this->editor->value($name);
+        return $this->callImplementation(__FUNCTION__, $value);
     }
 
     /**
@@ -63,7 +77,7 @@ class Editor extends FormElement implements EditorContract {
      */
     public function getEscapedValue()
     {
-        return $this->editor->getEscapedValue();
+        return $this->callImplementation(__FUNCTION__);
     }
 
     /**
@@ -73,7 +87,7 @@ class Editor extends FormElement implements EditorContract {
      */
     public function disabled($disabled = null)
     {
-        return $this->editor->disabled($disabled);
+        return $this->callImplementation(__FUNCTION__, $disabled);
     }
 
     /**
@@ -82,7 +96,7 @@ class Editor extends FormElement implements EditorContract {
      */
     public function disable()
     {
-        return $this->editor->disable();
+        return $this->callImplementation(__FUNCTION__);
     }
 
     /**
@@ -91,7 +105,7 @@ class Editor extends FormElement implements EditorContract {
      */
     public function enable()
     {
-        return $this->editor->enable();
+        return $this->callImplementation(__FUNCTION__);
     }
 
 }
