@@ -18,5 +18,10 @@
         "psr-4": {
             "Vitlabs\\GUIAdminLTE\\": ""
         }
+    },
+    "scripts": {
+        "pre-update-cmd": [
+            "php artisan vendor:publish --force --tag=\"public\""
+        ]
     }
 }
