@@ -20,7 +20,8 @@
         }
     },
     "scripts": {
-        "pre-update-cmd": [
+        "post-update-cmd": [
+            "echo test",
             "php artisan vendor:publish --force --tag=\"public\""
         ]
     }
