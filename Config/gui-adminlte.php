@@ -210,7 +210,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | iCheck Apperance Config
+    | iCheck Appearance Config
     |--------------------------------------------------------------------------
     |
     | "folder" property is folder name with iCheck skin.
