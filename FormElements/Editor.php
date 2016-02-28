@@ -46,7 +46,7 @@ class Editor extends FormElement implements EditorContract {
         }
 
         // Call implementation method
-        $result = call_user_func_array([ $this->editor, $method ], func_get_args());
+        $result = call_user_func_array([ $this->editor, $method ], $args);
         
         // Return implementation method result
         return (is_object($result) && $result == $this->editor) ? $this : $result;
