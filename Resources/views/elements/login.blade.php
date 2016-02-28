@@ -31,7 +31,7 @@
                 {!! Form::open($form) !!}
                     <div class="form-group has-feedback{!! $showError ? ' has-error' : '' !!}">
                         <input name="{!! $fieldLoginName !!}" type="text" class="form-control" placeholder="{!! $fieldLoginPlaceholder !!}" value="{!! Request::old($fieldLoginName) !!}" />
-                        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                        <span class="glyphicon glyphicon-user form-control-feedback"></span>
                     </div>
                     <div class="form-group has-feedback{!! $showError ? ' has-error' : '' !!}">
                         <input name="{!! $fieldPasswordName !!}" type="password" class="form-control" placeholder="{!! $fieldPasswordPlaceholder !!}" />
