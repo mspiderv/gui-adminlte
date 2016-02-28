@@ -8,6 +8,12 @@ use Vitlabs\GUIAdmin\Contracts\FormElements\EditorContract;
 class Editor extends FormElement implements EditorContract {
 
     /**
+     * Main element wrap class
+     * @var string
+     */
+    protected $mainWrapClass = 'form-group form-group-width';
+
+    /**
      * Name of the editor's implementation GUI element.
      * @var null
      */
