@@ -1,5 +1,5 @@
 <div{!! $attrs !!}>
-    @if (isset($title) || isset($icon))
+    @if ($title != '' || $icon != '')
     <div class="{!! $headerClass !!}">
         @if (isset($icon))
         <i class="{!! $icon !!}"></i>

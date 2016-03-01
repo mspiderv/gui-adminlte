@@ -11,7 +11,7 @@ class Box extends Element implements BoxContract {
 
 	use AttributesTrait, ContainerTrait, DataTrait;
 
-	public function __construct($title, $state = 'default', $icon = '')
+	public function __construct($title = '', $state = 'default', $icon = '')
 	{
 		$this->addClass('box');
 
