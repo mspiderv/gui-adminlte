@@ -36,6 +36,7 @@ div.dataTables_length select {
     width: 100%;
     background-color: #fefefe;
     border: 1px solid #D2D6DE;
+    border-top-width: 5px;
     padding: 15px;
 }
 
@@ -45,4 +46,13 @@ div.dataTables_length select {
 
 .form-group.form-group-width {
     max-width: none;
+}
+
+/* Alerts */
+.alert h4 {
+    margin-bottom: 0;
+}
+
+.alert p {
+    margin-top: 10px;
 }
