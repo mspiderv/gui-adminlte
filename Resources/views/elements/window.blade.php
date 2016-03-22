@@ -11,6 +11,9 @@
     <link rel="icon" href="{!! $favicon !!}" type="image/x-icon">
     @endif
 
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="csrf-param" content="_token" />
+
     {!! $resourceBag->getParsedCSS() !!}
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
